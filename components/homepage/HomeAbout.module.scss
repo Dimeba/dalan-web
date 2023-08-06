@@ -1,0 +1,30 @@
+@use '../../app/base';
+
+.photo {
+	position: relative;
+	grid-column: span 6;
+	aspect-ratio: 1 / 1;
+}
+
+.content {
+	grid-column: span 6;
+	display: flex;
+	align-items: center;
+
+	p {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.photo {
+		grid-column: span 12;
+	}
+
+	.content {
+		grid-column: span 12;
+	}
+}

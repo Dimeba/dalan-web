@@ -1,0 +1,64 @@
+@use '../../app/base';
+
+.title {
+	grid-column: span 12;
+	// margin-bottom: calc(base.$gap / 2);
+}
+
+.portfolio {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin: base.$gap 0;
+}
+
+.propertyCard {
+	grid-column: span 3;
+	position: relative;
+	overflow: hidden;
+
+	* {
+		color: white;
+	}
+
+	img {
+		z-index: -1;
+	}
+}
+
+.propertyCard:hover .propertyText {
+	background-color: rgba($color: base.$color-main, $alpha: 0.9);
+}
+
+.propertyCard:hover img {
+	transform: scale(1.3);
+}
+
+.propertyText {
+	background-color: rgba($color: base.$color-main, $alpha: 0.6);
+	padding: base.$gap;
+	background-image: url('/symbol-outline.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	aspect-ratio: 16/ 10;
+	// opacity: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.propertyCard {
+		grid-column: span 6;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.portfolio {
+		margin: calc(base.$gap / 2) 0;
+	}
+
+	.propertyCard {
+		grid-column: span 12;
+	}
+}

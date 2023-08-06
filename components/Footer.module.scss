@@ -1,0 +1,61 @@
+@use '../app/base';
+
+.footer {
+	background-color: base.$color-main;
+	padding: calc(base.$margin / 2) 0;
+
+	* {
+		color: white;
+	}
+}
+
+.footerColumn {
+	grid-column: span 3;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: calc(base.$gap / 4);
+	}
+}
+
+.credits {
+	padding: 1rem 0;
+
+	div {
+		max-width: 90%;
+		width: 1440px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		gap: calc(base.$gap / 4);
+
+		ul {
+			display: flex;
+			gap: calc(base.$gap / 2);
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.footerColumn {
+		grid-column: span 6;
+		margin-bottom: calc(base.$gap / 2);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.footer {
+		padding: calc(base.$margin / 3) 0;
+	}
+
+	.credits {
+		div {
+			flex-direction: column-reverse;
+		}
+	}
+
+	// .footerColumn {
+	// 	grid-column: span 12;
+	// }
+}

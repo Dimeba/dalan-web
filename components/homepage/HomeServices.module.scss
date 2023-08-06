@@ -1,0 +1,44 @@
+@use '../../app/base';
+
+.services {
+	min-height: 100vh;
+	background-image: url('/services-background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: base.$color-main;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	* {
+		color: white;
+	}
+}
+
+.service {
+	border-right: 1px solid white;
+	display: flex;
+	flex-direction: column;
+	gap: calc(base.$gap / 2);
+	justify-content: center;
+	padding: base.$gap;
+}
+
+.service:hover {
+	background-color: rgba($color: base.$color-primary, $alpha: 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+	.service {
+		border-right: 1px solid white;
+		border-bottom: 1px solid white;
+		grid-column: span 2;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.service {
+		border-right: none;
+		border-bottom: 1px solid white;
+		grid-column: span 4;
+	}
+}

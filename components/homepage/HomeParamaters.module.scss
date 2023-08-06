@@ -1,0 +1,44 @@
+@use '../../app/base';
+
+.description {
+	grid-column: span 6;
+	padding-right: 30%;
+	display: flex;
+	flex-direction: column;
+	gap: base.$gap;
+}
+
+.paramaterColumn {
+	grid-column: span 3;
+
+	h3 {
+		margin-bottom: calc(base.$gap / 3);
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: calc(base.$gap / 4);
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.description {
+		grid-column: span 12;
+		padding-right: 0;
+	}
+
+	.paramaterColumn {
+		grid-column: span 6;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.description {
+		gap: calc(base.$gap / 2);
+	}
+
+	.paramaterColumn {
+		grid-column: span 12;
+	}
+}
