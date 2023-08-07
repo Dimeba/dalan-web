@@ -29,16 +29,16 @@ const Footer = () => {
 					<div className={styles.footerColumn}>
 						<ul>
 							<li>
-								<Link href=''>Acquisitions</Link>
+								<Link href='/services/acquisitions'>Acquisitions</Link>
 							</li>
 							<li>
-								<Link href=''>Credit</Link>
+								<Link href='/services/credit'>Credit</Link>
 							</li>
 							<li>
-								<Link href=''>Management</Link>
+								<Link href='/services/management'>Management</Link>
 							</li>
 							<li>
-								<Link href=''>Rentals</Link>
+								<Link href='/services/rentals'>Rentals</Link>
 							</li>
 						</ul>
 					</div>

@@ -1,9 +1,20 @@
-@use '../../app/base';
+@use '../app/base';
 
 .photo {
 	position: relative;
 	grid-column: span 6;
 	aspect-ratio: 1 / 1;
+}
+
+.title {
+	grid-column: span 12;
+	text-align: center;
+}
+
+.summary {
+	font-size: 1.5rem;
+	grid-column: span 12;
+	text-align: center;
 }
 
 .content {
@@ -22,6 +33,14 @@
 @media screen and (max-width: 768px) {
 	.photo {
 		grid-column: span 12;
+	}
+
+	.title {
+		text-align: left;
+	}
+
+	.summary {
+		text-align: left;
 	}
 
 	.content {

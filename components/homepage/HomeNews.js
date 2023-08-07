@@ -5,19 +5,25 @@ import styles from './HomeNews.module.scss'
 import NewsCard from '../NewsCard'
 import Link from 'next/link'
 
-const HomeNews = () => {
-	const recentNews = [1, 2, 3, 4]
-
+const HomeNews = ({ news }) => {
 	return (
 		<section className={styles.news}>
 			<div className='sectionContainer'>
 				<h2 className={styles.title}>Recent News</h2>
 
-				{recentNews &&
-					recentNews.map((article, index) => <NewsCard key={index} />)}
+				{news.map(article => (
+					<NewsCard
+						key={article.sys.id}
+						title={article.fields.title}
+						publisher={article.fields.publisher}
+						date={article.fields.date}
+						link={article.fields.link}
+						photo={article.fields.image}
+					/>
+				))}
 
 				<div style={{ gridColumn: 'span 12' }}>
-					<Link href='/portfolio'>
+					<Link href='/news'>
 						<button className='button-blue'>More Articles</button>
 					</Link>
 				</div>
