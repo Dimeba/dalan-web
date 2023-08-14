@@ -1,0 +1,39 @@
+@use '../app/base';
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: calc(base.$gap / 2);
+	width: 100%;
+
+	textarea {
+		grid-column: span 2;
+		height: calc(base.$margin / 2);
+	}
+
+	input,
+	select,
+	textarea {
+		padding: calc(base.$gap / 6);
+		border: none;
+		border-bottom: 1px solid base.$color-main;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		box-sizing: border-box;
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.form {
+		input,
+		select {
+			grid-column: span 2;
+		}
+	}
+}

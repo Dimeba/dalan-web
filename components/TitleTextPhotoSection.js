@@ -3,8 +3,15 @@ import styles from './TitleTextPhotoSection.module.scss'
 
 // components
 import Image from 'next/image'
+import ContactForm from './ContactForm'
 
-const TitleTextPhotoSection = ({ title, summary, photo, description }) => {
+const TitleTextPhotoSection = ({
+	title,
+	summary,
+	photo,
+	description,
+	contact
+}) => {
 	return (
 		<div className='sectionContainer'>
 			{title && <h2 className={styles.title}>{title}</h2>}
@@ -25,7 +32,8 @@ const TitleTextPhotoSection = ({ title, summary, photo, description }) => {
 			</div>
 
 			<div className={styles.content}>
-				<p style={{ fontSize: '1rem' }}>{description}</p>
+				{description && <p style={{ fontSize: '1rem' }}>{description}</p>}
+				{contact && <ContactForm />}
 			</div>
 		</div>
 	)
