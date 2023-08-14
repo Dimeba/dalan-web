@@ -11,8 +11,8 @@ const ContactForm = () => {
 		>
 			<input type='hidden' name='form-name' value='contact' />
 
-			<input type='text' placeholder='Name' />
-			<select defaultValue='defaultOption'>
+			<input id='name' name='name' type='text' placeholder='Name' />
+			<select id='inquary' name='inquiryType' defaultValue='inquiryType'>
 				<option disabled hidden value='defaultOption'>
 					How can we help?
 				</option>
@@ -21,8 +21,8 @@ const ContactForm = () => {
 				<option value='type3'>Type 3</option>
 			</select>
 
-			<input type='text' placeholder='Phone Number' />
-			<input type='email' placeholder='Email Address' />
+			<input type='text' id='phone' name='phone' placeholder='Phone Number' />
+			<input type='email' id='email' name='email' placeholder='Email Address' />
 			<textarea placeholder='Message'></textarea>
 
 			<button className='button-blue'>Send Message</button>
