@@ -1,0 +1,41 @@
+@use '../../app/base';
+
+.title {
+	grid-column: span 12;
+}
+
+.teamCard {
+	grid-column: span 2;
+
+	h4 {
+		font-size: 1rem;
+		margin-top: calc(base.$gap / 3);
+	}
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.photo {
+	position: relative;
+	aspect-ratio: 1 / 1;
+}
+
+.button {
+	margin-top: calc(base.$gap / 4);
+	font-weight: 600;
+	color: base.$color-primary;
+}
+
+@media screen and (max-width: 1024px) {
+	.teamCard {
+		grid-column: span 3;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.teamCard {
+		grid-column: span 12;
+	}
+}

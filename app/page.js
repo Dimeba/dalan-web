@@ -29,6 +29,10 @@ export default async function Home() {
 		order: 'sys.createdAt'
 	})
 
+	const portfolio = await client.getEntries({
+		content_type: 'portfolio'
+	})
+
 	const homepageContent = homepage.items[0]
 
 	return (
@@ -42,8 +46,11 @@ export default async function Home() {
 				aboutPhoto={homepageContent.fields.aboutPhoto}
 			/>
 			<HomeServices services={services.items} />
-			<HomeParamaters />
-			<HomePortfolio />
+			<HomeParamaters
+				acquisitionsParameters={homepageContent.fields.acquisitionsParameters}
+				creditParameters={homepageContent.fields.creditParameters}
+			/>
+			<HomePortfolio portfolio={portfolio.items} />
 			<HomeNews
 				news={news.items.filter(article => article.fields.featured == true)}
 			/>

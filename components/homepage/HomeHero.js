@@ -23,7 +23,9 @@ const Hero = ({ title, services }) => {
 				<Link href='/#services'>
 					<button className='button-blue-white'>Our Services</button>
 				</Link>
-				<button className='button-white'>Contact Us</button>
+				<Link href='/contact'>
+					<button className='button-white'>Contact Us</button>
+				</Link>
 			</div>
 		</section>
 	)

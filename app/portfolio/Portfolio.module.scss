@@ -1,0 +1,15 @@
+@use '../base';
+
+.mapContainer {
+	position: relative;
+	margin-top: 61px;
+}
+
+.map {
+	width: 100%;
+	height: 100vh;
+
+	* {
+		transition: none;
+	}
+}

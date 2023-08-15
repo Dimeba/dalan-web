@@ -1,18 +1,21 @@
 {
-  "name": "dalan-web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "contentful": "^10.4.0",
-    "next": "13.4.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.64.2"
-  }
+	"name": "dalan-web",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@react-google-maps/api": "^2.19.2",
+		"contentful": "^10.4.0",
+		"leaflet": "^1.9.4",
+		"next": "13.4.12",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-leaflet": "^4.2.1",
+		"sass": "^1.64.2"
+	}
 }

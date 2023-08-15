@@ -5,8 +5,8 @@ import styles from './HomePortfolio.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const HomePortfolio = () => {
-	const recentClosings = [1, 2, 3, 4]
+const HomePortfolio = ({ portfolio }) => {
+	const recentClosings = portfolio.filter(property => property.fields.featured)
 
 	return (
 		<section>
@@ -16,10 +16,10 @@ const HomePortfolio = () => {
 
 			<div className={styles.portfolio}>
 				{recentClosings &&
-					recentClosings.map((closing, index) => (
-						<div key={index} className={styles.propertyCard}>
+					recentClosings.map(property => (
+						<div key={property.sys.id} className={styles.propertyCard}>
 							<Image
-								src='/portfolio-sample.jpg'
+								src={'https:' + property.fields.photo.fields.file.url}
 								fill
 								quality={100}
 								sizes='(max-width: 768px) 100vw, 768px'
@@ -30,12 +30,15 @@ const HomePortfolio = () => {
 							/>
 							<div className={styles.propertyText}>
 								<p>
-									<b>1 Main Street</b>
+									<b>{property.fields.address}</b>
 								</p>
-								<p>New York, NY 10001</p>
+								<p>
+									{property.fields.city}, {property.fields.state}{' '}
+									{property.fields.zip}
+								</p>
 								<br />
-								<p>Equity/Debt: Equity</p>
-								<p>Type: Mixed</p>
+								<p>Equity/Debt: {property.fields.equityOrDebt}</p>
+								<p>Type: {property.fields.type}</p>
 							</div>
 						</div>
 					))}

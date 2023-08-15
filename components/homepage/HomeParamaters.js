@@ -1,7 +1,7 @@
 // styles
 import styles from './HomeParamaters.module.scss'
 
-const Paramaters = () => {
+const Paramaters = ({ acquisitionsParameters, creditParameters }) => {
 	return (
 		<section className={styles.paramaters}>
 			<div className='sectionContainer'>
@@ -19,24 +19,18 @@ const Paramaters = () => {
 				<div className={styles.paramaterColumn}>
 					<h3>Acquisitions</h3>
 					<ul>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
+						{acquisitionsParameters.map(item => (
+							<li key={item}>{item}</li>
+						))}
 					</ul>
 				</div>
 
 				<div className={styles.paramaterColumn}>
 					<h3>Credit</h3>
 					<ul>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
-						<li>Property Type: Multifamily</li>
+						{creditParameters.map(item => (
+							<li key={item}>{item}</li>
+						))}
 					</ul>
 				</div>
 			</div>

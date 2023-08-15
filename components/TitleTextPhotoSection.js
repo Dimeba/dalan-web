@@ -18,18 +18,20 @@ const TitleTextPhotoSection = ({
 
 			{summary && <p className={styles.summary}>{summary}</p>}
 
-			<div className={styles.photo}>
-				<Image
-					src={'https:' + photo}
-					fill
-					quality={100}
-					sizes='(max-width: 768px) 100vw, 768px'
-					style={{ objectFit: 'cover' }}
-					alt='Section Image'
-					priority={true}
-					as='img'
-				/>
-			</div>
+			{photo && (
+				<div className={styles.photo}>
+					<Image
+						src={'https:' + photo}
+						fill
+						quality={100}
+						sizes='(max-width: 768px) 100vw, 768px'
+						style={{ objectFit: 'cover' }}
+						alt='Section Image'
+						priority={true}
+						as='img'
+					/>
+				</div>
+			)}
 
 			<div className={styles.content}>
 				{description && <p style={{ fontSize: '1rem' }}>{description}</p>}
