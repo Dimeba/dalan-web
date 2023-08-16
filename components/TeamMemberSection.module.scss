@@ -1,5 +1,17 @@
 @use '../app/base';
 
+.modal {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba($color: white, $alpha: 1);
+	display: flex;
+	align-items: center;
+	z-index: 2;
+}
+
 .photo {
 	grid-column: span 3;
 	aspect-ratio: 1 / 1;
@@ -11,6 +23,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: calc(base.$gap / 2);
+}
+
+.back {
+	font-size: 0.8rem;
+	width: fit-content;
+	color: base.$color-primary;
+	cursor: pointer;
+	grid-column: span 12;
 }
 
 .links {

@@ -15,7 +15,8 @@ const TeamSection = ({ title, team }) => {
 					title={item.fields.title}
 					photo={item.fields.photo.fields.file.url}
 					bio={item.fields.bio}
-					id={item.sys.id}
+					linkedin={item.fields.linkedin}
+					vcard={item.fields.vcard.fields.file.url}
 				/>
 			))}
 		</div>
