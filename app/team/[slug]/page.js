@@ -19,31 +19,22 @@ export async function generateStaticParams() {
 	}))
 }
 
-// export default async function Member({ params }) {
-// 	const { slug } = params
+export default async function Member({ params }) {
+	const { slug } = params
 
-// 	const team = await client.getEntries({
-// 		content_type: 'team'
-// 	})
+	const team = await client.getEntries({
+		content_type: 'team'
+	})
 
-// 	const member = team.items.find(
-// 		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
-// 	)
+	const member = team.items.find(
+		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
+	)
 
-// 	return (
-// 		<main>
-// 			<section>
-// 				<TeamMemberSection member={member} />
-// 			</section>
-// 		</main>
-// 	)
-// }
-
-export default async function Member({}) {
 	return (
 		<main>
 			<section>
-				<div>test</div>
+				{/* <TeamMemberSection member={member} /> */}
+				test
 			</section>
 		</main>
 	)
