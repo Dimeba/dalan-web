@@ -4,13 +4,16 @@ import styles from './TitleTextPhotoSection.module.scss'
 // components
 import Image from 'next/image'
 import ContactForm from './ContactForm'
+import CareersSection from './CareersSection'
 
 const TitleTextPhotoSection = ({
 	title,
 	summary,
 	photo,
 	description,
-	contact
+	contact,
+	careers,
+	openPositions
 }) => {
 	return (
 		<div className='sectionContainer'>
@@ -36,6 +39,7 @@ const TitleTextPhotoSection = ({
 			<div className={styles.content}>
 				{description && <p style={{ fontSize: '1rem' }}>{description}</p>}
 				{contact && <ContactForm />}
+				{careers && <CareersSection openPositions={openPositions} />}
 			</div>
 		</div>
 	)

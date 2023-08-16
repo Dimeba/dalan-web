@@ -28,6 +28,10 @@ export const menu = [
 		text: 'News'
 	},
 	{
+		url: '/careers',
+		text: 'Careers'
+	},
+	{
 		url: '/contact',
 		text: 'Contact Us'
 	}
