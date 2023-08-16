@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const TeamMemberSection = ({ member }) => {
+	console.log('test')
+
 	return (
 		<>
 			{member && (
