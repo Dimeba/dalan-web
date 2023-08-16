@@ -28,24 +28,18 @@ const TeamMemberSection = ({ member }) => {
 
 				<p>{member.fields.bio}</p>
 
-				{/* <div className={styles.links}>
+				<div className={styles.links}>
 					{member.fields.linkedin && (
-						<Link href={member.fields.linkedin ? member.fields.linkedin : ''}>
+						<Link href={member.fields.linkedin}>
 							<p className={styles.link}>Visit LinkedIn</p>
 						</Link>
 					)}
-					{member.fields.vcard.fields.file.url && (
-						<Link
-							href={
-								member.fields.vcard.fields.file.url
-									? member.fields.vcard.fields.file.url
-									: ''
-							}
-						>
+					{member.fields.vcard && (
+						<Link href={member.fields.vcard.fields.file.url}>
 							<p className={styles.link}>Download vCard</p>
 						</Link>
 					)}
-				</div> */}
+				</div>
 			</div>
 		</div>
 	)

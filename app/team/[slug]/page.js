@@ -19,23 +19,31 @@ export async function generateStaticParams() {
 	}))
 }
 
-export default async function Member({ params }) {
-	const { slug } = params
+// export default async function Member({ params }) {
+// 	const { slug } = params
 
-	const team = await client.getEntries({
-		content_type: 'team'
-	})
+// 	const team = await client.getEntries({
+// 		content_type: 'team'
+// 	})
 
-	const member = team.items.find(
-		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
-	)
+// 	const member = team.items.find(
+// 		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
+// 	)
 
-	console.log(member.fields.linkedin)
+// 	return (
+// 		<main>
+// 			<section>
+// 				<TeamMemberSection member={member} />
+// 			</section>
+// 		</main>
+// 	)
+// }
 
+export default async function Member({}) {
 	return (
 		<main>
 			<section>
-				<TeamMemberSection member={member} />
+				<div>test</div>
 			</section>
 		</main>
 	)
