@@ -34,11 +34,11 @@ const TeamMemberSection = ({ name, title, photo, bio, linkedin, vcard }) => {
 							<p className={styles.link}>Visit LinkedIn</p>
 						</Link>
 					)}
-					{vcard && (
+					{/* {vcard && (
 						<Link href={vcard.fields.file.url}>
 							<p className={styles.link}>Download vCard</p>
 						</Link>
-					)}
+					)} */}
 				</div>
 			</div>
 		</div>
