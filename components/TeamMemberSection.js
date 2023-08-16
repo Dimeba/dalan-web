@@ -28,7 +28,7 @@ const TeamMemberSection = ({ member }) => {
 
 				<p>{member.fields.bio}</p>
 
-				<div className={styles.links}>
+				{/* <div className={styles.links}>
 					{member.fields.linkedin && (
 						<Link href={member.fields.linkedin ? member.fields.linkedin : ''}>
 							<p className={styles.link}>Visit LinkedIn</p>
@@ -45,7 +45,7 @@ const TeamMemberSection = ({ member }) => {
 							<p className={styles.link}>Download vCard</p>
 						</Link>
 					)}
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)
