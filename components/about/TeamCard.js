@@ -22,7 +22,7 @@ const TeamCard = ({ name, title, photo }) => {
 			</div>
 			<h4>{name}</h4>
 			<p>{title}</p>
-			<Link href=''>
+			<Link href={`/team/${name.toLowerCase().replace(/ /g, '-')}`}>
 				<p className={styles.button}>Read Bio</p>
 			</Link>
 		</div>

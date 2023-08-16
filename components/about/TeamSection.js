@@ -14,6 +14,7 @@ const TeamSection = ({ title, team }) => {
 					name={item.fields.name}
 					title={item.fields.title}
 					photo={item.fields.photo.fields.file.url}
+					bio={item.fields.bio}
 				/>
 			))}
 		</div>
