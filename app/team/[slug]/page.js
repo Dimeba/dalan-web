@@ -33,8 +33,7 @@ export default async function Member({ params }) {
 	return (
 		<main>
 			<section>
-				{/* <TeamMemberSection member={member} /> */}
-				test
+				<TeamMemberSection member={member} />
 			</section>
 		</main>
 	)
