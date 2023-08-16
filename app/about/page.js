@@ -1,6 +1,7 @@
 // components
 import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 import TeamSection from '@/components/about/TeamSection'
+import History from '@/components/History'
 
 // contentful
 import { createClient } from 'contentful'
@@ -12,7 +13,13 @@ export default async function News() {
 	})
 
 	const team = await client.getEntries({
-		content_type: 'team'
+		content_type: 'team',
+		order: 'sys.createdAt'
+	})
+
+	const history = await client.getEntries({
+		content_type: 'history',
+		order: 'sys.createdAt'
 	})
 
 	return (
@@ -37,6 +44,7 @@ export default async function News() {
 					title='Team'
 					team={team.items.filter(item => item.fields.type == 'Team')}
 				/>
+				<History history={history.items} />
 			</section>
 		</main>
 	)
