@@ -6,8 +6,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const TeamMemberSection = ({ member }) => {
-	console.log(member)
-
 	return (
 		<div className='sectionContainer'>
 			<div className={styles.photo}>
@@ -32,12 +30,18 @@ const TeamMemberSection = ({ member }) => {
 
 				<div className={styles.links}>
 					{member.fields.linkedin && (
-						<Link href={member.fields.linkedin}>
+						<Link href={member.fields.linkedin ? member.fields.linkedin : ''}>
 							<p className={styles.link}>Visit LinkedIn</p>
 						</Link>
 					)}
 					{member.fields.vcard.fields.file.url && (
-						<Link href={member.fields.vcard.fields.file.url}>
+						<Link
+							href={
+								member.fields.vcard.fields.file.url
+									? member.fields.vcard.fields.file.url
+									: ''
+							}
+						>
 							<p className={styles.link}>Download vCard</p>
 						</Link>
 					)}

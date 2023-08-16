@@ -1,5 +1,4 @@
 // components
-import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 import TeamMemberSection from '@/components/TeamMemberSection'
 
 // contentful
@@ -31,7 +30,7 @@ export default async function Member({ params }) {
 		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
 	)
 
-	console.log(member)
+	console.log(member.fields.linkedin)
 
 	return (
 		<main>
