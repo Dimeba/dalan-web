@@ -31,17 +31,12 @@ export default async function Member({ params }) {
 		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
 	)
 
+	console.log(member)
+
 	return (
 		<main>
 			<section>
-				<TeamMemberSection
-					name={member.fields.name}
-					title={member.fields.title}
-					photo={member.fields.photo.fields.file.url}
-					bio={member.fields.bio}
-					linkedin={member.fields.linkedin}
-					vcard={member.fields.vcard}
-				/>
+				<TeamMemberSection member={member} />
 			</section>
 		</main>
 	)
