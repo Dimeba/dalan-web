@@ -5,7 +5,7 @@ import styles from './TeamSection.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const TeamCard = ({ name, title, photo }) => {
+const TeamCard = ({ name, title, photo, id }) => {
 	return (
 		<div className={styles.teamCard}>
 			<div className={styles.photo}>
@@ -22,7 +22,7 @@ const TeamCard = ({ name, title, photo }) => {
 			</div>
 			<h4>{name}</h4>
 			<p>{title}</p>
-			<Link href={`/team/${name.toLowerCase().replace(/ /g, '-')}`}>
+			<Link href={`/team/${id}`}>
 				<p className={styles.button}>Read Bio</p>
 			</Link>
 		</div>

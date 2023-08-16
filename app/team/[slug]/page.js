@@ -26,9 +26,7 @@ export default async function Member({ params }) {
 		content_type: 'team'
 	})
 
-	const member = team.items.find(
-		item => item.fields.name.toLowerCase().replace(/ /g, '-') == slug
-	)
+	const member = team.items.find(item => item.sys.id == slug)
 
 	return (
 		<main>
