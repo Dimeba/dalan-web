@@ -33,7 +33,14 @@ export default async function Member({ params }) {
 	return (
 		<main>
 			<section>
-				<TeamMemberSection member={member} />
+				<TeamMemberSection
+					name={member.fields.name}
+					title={member.fields.title}
+					photo={member.fields.photo.fields.file.url}
+					bio={member.fields.bio}
+					linkedin={member.fields.linkedin}
+					vcard={member.fields.vcard.fields.file.url}
+				/>
 			</section>
 		</main>
 	)
