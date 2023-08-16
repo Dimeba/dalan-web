@@ -3,11 +3,19 @@
 // styles
 import styles from '@/app/portfolio/Portfolio.module.scss'
 
+// components
+import Popup from './Popup'
+
 // hooks
 import { useCallback, useMemo, useRef, useState } from 'react'
 
 // maps
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
+import {
+	GoogleMap,
+	useLoadScript,
+	Marker,
+	InfoBox
+} from '@react-google-maps/api'
 
 const Map = ({ portfolio }) => {
 	const { isLoaded } = useLoadScript({
@@ -26,12 +34,21 @@ const Map = ({ portfolio }) => {
 	)
 	const onLoad = useCallback(map => (mapRef.current = map), [])
 
+	// popup
+	const [showPopup, setShowPopup] = useState(false)
+	const [activeProperty, setActiveProperty] = useState()
+
+	const handleClick = id => {
+		setShowPopup(true)
+		setActiveProperty(portfolio.find(property => property.sys.id == id))
+	}
+
 	if (!isLoaded) return <div>Loading...</div>
 
 	return (
 		<>
 			<GoogleMap
-				zoom={11}
+				zoom={12}
 				center={center}
 				mapContainerClassName={styles.map}
 				options={options}
@@ -44,10 +61,17 @@ const Map = ({ portfolio }) => {
 							lat: property.fields.location.lat,
 							lng: property.fields.location.lon
 						}}
-						icon='/pin.svg'
+						icon={
+							property.fields.equityOrDebt == 'Equity'
+								? '/pin.svg'
+								: '/pin-blue.svg'
+						}
+						onClick={() => handleClick(property.sys.id)}
 					/>
 				))}
 			</GoogleMap>
+
+			{showPopup && <Popup activeProperty={activeProperty} />}
 		</>
 	)
 }
