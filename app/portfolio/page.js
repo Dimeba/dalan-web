@@ -6,6 +6,7 @@ import { createClient } from 'contentful'
 
 // components
 import Map from '@/components/Map'
+import HomePortfolio from '@/components/homepage/HomePortfolio'
 
 export default async function News() {
 	const client = createClient({
@@ -33,20 +34,25 @@ export default async function News() {
 				<div className={styles.highlightsContainer}>
 					<div className={styles.highlights}>
 						<div>
-							<h4>{pageContent.fields.totalAssets}</h4>
-							<p>Total Assets Under Management</p>
+							<h4>3 Million SF</h4>
+							<p>Residential and Commercial real estate across the US</p>
 						</div>
 						<div>
-							<h4>{pageContent.fields.totalSf}</h4>
-							<p>SF Under Management</p>
+							<h4>$2.5+ Billion</h4>
+							<p>Assets under Management</p>
 						</div>
 						<div>
-							<h4>{pageContent.fields.totalDeals}</h4>
-							<p>Total Deals Closed in 2023</p>
+							<h4>7 Focused Markets</h4>
+							<p>with competitive advantages</p>
+						</div>
+						<div>
+							<h4>72% Multifamily | 16% Retail | 12% Office</h4>
+							<p>Portfolio Allocation (by Asset Class)</p>
 						</div>
 					</div>
 				</div>
 			</section>
+			<HomePortfolio portfolio={portfolio.items} homepage={false} />
 			<section>
 				<div className='sectionContainer'>
 					<div className={styles.portfolioList}>

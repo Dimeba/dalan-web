@@ -50,7 +50,7 @@ export default async function Home() {
 				acquisitionsParameters={homepageContent.fields.acquisitionsParameters}
 				creditParameters={homepageContent.fields.creditParameters}
 			/>
-			<HomePortfolio portfolio={portfolio.items} />
+			<HomePortfolio portfolio={portfolio.items} homepage={true} />
 			<HomeNews
 				news={news.items.filter(article => article.fields.featured == true)}
 			/>

@@ -5,13 +5,13 @@ import styles from './HomePortfolio.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const HomePortfolio = ({ portfolio }) => {
+const HomePortfolio = ({ portfolio, homepage }) => {
 	const recentClosings = portfolio.filter(property => property.fields.featured)
 
 	return (
 		<section>
 			<div className='sectionContainer'>
-				<h2 className={styles.title}>Recent Closings</h2>
+				<h2 className={styles.title}>Highlighted Deals</h2>
 			</div>
 
 			<div className={styles.portfolio}>
@@ -48,13 +48,15 @@ const HomePortfolio = ({ portfolio }) => {
 					))}
 			</div>
 
-			<div className='sectionContainer'>
-				<div style={{ gridColumn: 'span 12' }}>
-					<Link href='/portfolio'>
-						<button className='button-blue'>See Full Portfolio</button>
-					</Link>
+			{homepage && (
+				<div className='sectionContainer'>
+					<div style={{ gridColumn: 'span 12' }}>
+						<Link href='/portfolio'>
+							<button className='button-blue'>See Full Portfolio</button>
+						</Link>
+					</div>
 				</div>
-			</div>
+			)}
 		</section>
 	)
 }
