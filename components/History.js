@@ -11,9 +11,7 @@ const History = ({ history }) => {
 						<div key={event.sys.id} className={styles.event}>
 							<div className={styles.circle}></div>
 							<div className={styles.content}>
-								<h4>
-									{event.fields.date} / {event.fields.name}
-								</h4>
+								<h4>{event.fields.date}</h4>
 								<p>{event.fields.description}</p>
 							</div>
 						</div>

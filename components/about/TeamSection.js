@@ -13,10 +13,10 @@ const TeamSection = ({ title, team }) => {
 					key={item.sys.id}
 					name={item.fields.name}
 					title={item.fields.title}
-					photo={item.fields.photo.fields.file.url}
+					photo={item.fields.photo && item.fields.photo.fields.file.url}
 					bio={item.fields.bio}
 					linkedin={item.fields.linkedin}
-					vcard={item.fields.vcard.fields.file.url}
+					vcard={item.fields.vcard && item.fields.vcard.fields.file.url}
 				/>
 			))}
 		</div>

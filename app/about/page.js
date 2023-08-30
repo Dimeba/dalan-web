@@ -1,6 +1,7 @@
 // components
 import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 import TeamSection from '@/components/about/TeamSection'
+import Partners from '@/components/about/Partners'
 import History from '@/components/History'
 
 // contentful
@@ -22,28 +23,38 @@ export default async function News() {
 		order: 'sys.createdAt'
 	})
 
+	const about = await client.getEntries({
+		content_type: 'aboutPage'
+	})
+
+	const pageContent = about.items[0]
+
 	return (
 		<main>
 			<section>
 				<TitleTextPhotoSection
-					title='About Dalan RE'
-					summary='Dalan RE is a fully vertically integrated investor with a proven track record of making a wide range of successful real estate investments in both equity and debt. Dalan has the ability to work with larger private equity firms but keeps the values of a family office.'
+					title={pageContent.fields.title}
+					summary={pageContent.fields.description}
 				/>
 
 				<TeamSection
-					title='Senior Leadership'
+					title='Leadership'
 					team={team.items.filter(
 						item => item.fields.type == 'Senior Leadership'
 					)}
 				/>
 				<TeamSection
-					title='Management'
-					team={team.items.filter(item => item.fields.type == 'Management')}
+					team={team.items.filter(item => item.fields.type == 'Leadership')}
+				/>
+				<TeamSection
+					title='Advisors'
+					team={team.items.filter(item => item.fields.type == 'Advisors')}
 				/>
 				<TeamSection
 					title='Team'
 					team={team.items.filter(item => item.fields.type == 'Team')}
 				/>
+				<Partners partners={pageContent.fields.partners} />
 				<History history={history.items} />
 			</section>
 		</main>

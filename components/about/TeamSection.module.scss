@@ -29,6 +29,17 @@
 	cursor: pointer;
 }
 
+// partners
+.partner {
+	grid-column: span 3;
+	padding: 0 20%;
+}
+
+.partnerPhoto {
+	aspect-ratio: 1 / 1;
+	position: relative;
+}
+
 @media screen and (max-width: 1024px) {
 	.teamCard {
 		grid-column: span 3;
@@ -38,5 +49,10 @@
 @media screen and (max-width: 768px) {
 	.teamCard {
 		grid-column: span 12;
+	}
+
+	.partner {
+		grid-column: span 6;
+		padding: 0 20%;
 	}
 }
