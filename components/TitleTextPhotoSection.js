@@ -6,11 +6,16 @@ import Image from 'next/image'
 import ContactForm from './ContactForm'
 import CareersSection from './CareersSection'
 
+// contentful
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+
 const TitleTextPhotoSection = ({
 	title,
 	summary,
 	photo,
 	description,
+	customText1,
+	customText2,
 	contact,
 	careers,
 	openPositions
@@ -19,7 +24,15 @@ const TitleTextPhotoSection = ({
 		<div className='sectionContainer'>
 			{title && <h2 className={styles.title}>{title}</h2>}
 
-			{summary && <p className={styles.summary}>{summary}</p>}
+			{summary && (
+				<div className={styles.summary}>
+					{typeof summary == 'object' ? (
+						documentToReactComponents(summary)
+					) : (
+						<p>{summary}</p>
+					)}
+				</div>
+			)}
 
 			{photo && (
 				<div className={styles.photo}>
@@ -36,8 +49,21 @@ const TitleTextPhotoSection = ({
 				</div>
 			)}
 
+			{customText1 && (
+				<div className={styles.content}>
+					<div className={styles.customText}>
+						{documentToReactComponents(customText1)}
+					</div>
+				</div>
+			)}
+
 			<div className={styles.content}>
 				{description && <p style={{ fontSize: '1rem' }}>{description}</p>}
+				{customText2 && (
+					<div className={styles.customText}>
+						{documentToReactComponents(customText2)}
+					</div>
+				)}
 				{contact && <ContactForm />}
 				{careers && <CareersSection openPositions={openPositions} />}
 			</div>

@@ -23,7 +23,7 @@ const Map = ({ portfolio }) => {
 	})
 
 	const mapRef = useRef()
-	const center = useMemo(() => ({ lat: 40.7128, lng: -74.006 }), [])
+	const center = useMemo(() => ({ lat: 39.8283, lng: -98.5795 }), [])
 	const options = useMemo(
 		() => ({
 			mapId: '58a5a52bed788a28',
@@ -48,7 +48,7 @@ const Map = ({ portfolio }) => {
 	return (
 		<>
 			<GoogleMap
-				zoom={12}
+				zoom={5}
 				center={center}
 				mapContainerClassName={styles.map}
 				options={options}

@@ -18,16 +18,18 @@ const HomePortfolio = ({ portfolio }) => {
 				{recentClosings &&
 					recentClosings.map(property => (
 						<div key={property.sys.id} className={styles.propertyCard}>
-							<Image
-								src={'https:' + property.fields.photo.fields.file.url}
-								fill
-								quality={100}
-								sizes='(max-width: 768px) 100vw, 768px'
-								style={{ objectFit: 'cover' }}
-								alt='Section Image'
-								priority={true}
-								as='img'
-							/>
+							{property.fields.photo && (
+								<Image
+									src={'https:' + property.fields.photo.fields.file.url}
+									fill
+									quality={100}
+									sizes='(max-width: 768px) 100vw, 768px'
+									style={{ objectFit: 'cover' }}
+									alt='Section Image'
+									priority={true}
+									as='img'
+								/>
+							)}
 							<div className={styles.propertyText}>
 								<p>
 									<b>{property.fields.address}</b>
@@ -37,8 +39,10 @@ const HomePortfolio = ({ portfolio }) => {
 									{property.fields.zip}
 								</p>
 								<br />
-								<p>Equity/Debt: {property.fields.equityOrDebt}</p>
-								<p>Type: {property.fields.type}</p>
+								{property.fields.equityOrDebt && (
+									<p>Equity/Debt: {property.fields.equityOrDebt}</p>
+								)}
+								{property.fields.type && <p>Type: {property.fields.type}</p>}
 							</div>
 						</div>
 					))}
