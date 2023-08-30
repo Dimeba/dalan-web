@@ -12,7 +12,9 @@ const Hero = ({ title, services }) => {
 				<div className={styles.listContainer}>
 					<ul>
 						{services.map(service => (
-							<li key={service.sys.id}>{service.fields.title}</li>
+							<li style={{ color: '#0567fe' }} key={service.sys.id}>
+								{service.fields.title}
+							</li>
 						))}
 						<li>Real&nbsp;Estate</li>
 					</ul>

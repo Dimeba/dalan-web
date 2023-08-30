@@ -14,6 +14,7 @@ const TitleTextPhotoSection = ({
 	summary,
 	photo,
 	description,
+	largeDescription,
 	customText1,
 	customText2,
 	contact,
@@ -59,6 +60,7 @@ const TitleTextPhotoSection = ({
 
 			<div className={styles.content}>
 				{description && <p style={{ fontSize: '1rem' }}>{description}</p>}
+				{largeDescription && <p>{largeDescription}</p>}
 				{customText2 && (
 					<div className={styles.customText}>
 						{documentToReactComponents(customText2)}

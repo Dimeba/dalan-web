@@ -4,7 +4,7 @@ const HomeAbout = ({ aboutText, aboutPhoto }) => {
 	return (
 		<section>
 			<TitleTextPhotoSection
-				description={aboutText}
+				largeDescription={aboutText}
 				photo={aboutPhoto.fields.file.url}
 			/>
 		</section>

@@ -1,7 +1,7 @@
 @use '../../app/base';
 
 .description {
-	grid-column: span 6;
+	grid-column: span 4;
 	padding-right: 30%;
 	display: flex;
 	flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .paramaterColumn {
-	grid-column: span 3;
+	grid-column: span 4;
 
 	h3 {
 		margin-bottom: calc(base.$gap / 3);
