@@ -4,9 +4,13 @@ import styles from './HomeServices.module.scss'
 // components
 import Link from 'next/link'
 
-const HomeServices = ({ services }) => {
+const HomeServices = ({ services, noMargins }) => {
 	return (
-		<section id='services' className={styles.services}>
+		<section
+			id='services'
+			className={styles.services}
+			style={noMargins && { margin: '0' }}
+		>
 			{services &&
 				services.map(service => (
 					<div key={service.sys.id} className={styles.service}>

@@ -16,7 +16,7 @@ export const menu = [
 		text: 'About Us'
 	},
 	{
-		url: '/#services',
+		url: '/platforms',
 		text: 'Our Platforms'
 	},
 	{
