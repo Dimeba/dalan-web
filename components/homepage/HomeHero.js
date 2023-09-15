@@ -23,7 +23,7 @@ const Hero = ({ title, services }) => {
 
 			<div className='button-row'>
 				<Link href='/#services'>
-					<button className='button-blue-white'>Our Services</button>
+					<button className='button-blue-white'>Our Platforms</button>
 				</Link>
 				<Link href='/contact'>
 					<button className='button-white'>Contact Us</button>

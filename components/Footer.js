@@ -57,7 +57,7 @@ const Footer = () => {
 					<div className={styles.footerColumn}>
 						<ul>
 							<li>
-								info@dalan-re.com <br />
+								Help@DalanRe.com <br />
 								(212) 929-0510
 							</li>
 

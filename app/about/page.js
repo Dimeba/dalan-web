@@ -29,6 +29,8 @@ export default async function News() {
 
 	const pageContent = about.items[0]
 
+	console.log(pageContent.fields.executiveTeam)
+
 	return (
 		<main>
 			<section>
@@ -38,18 +40,17 @@ export default async function News() {
 				/>
 
 				<TeamSection
-					title='Leadership'
-					team={team.items.filter(
-						item => item.fields.type == 'Senior Leadership'
-					)}
+					title='Executive Team'
+					team={pageContent.fields.executiveTeam}
 				/>
 				<TeamSection
-					team={team.items.filter(item => item.fields.type == 'Leadership')}
+					title='Senior Leadership Team'
+					team={pageContent.fields.seniorLeadership}
 				/>
-				<TeamSection
+				{/* <TeamSection
 					title='Advisors'
 					team={team.items.filter(item => item.fields.type == 'Advisors')}
-				/>
+				/> */}
 				<TeamSection
 					title='Team'
 					team={team.items.filter(item => item.fields.type == 'Team')}

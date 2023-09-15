@@ -17,7 +17,7 @@ export const menu = [
 	},
 	{
 		url: '/#services',
-		text: 'Services'
+		text: 'Our Platforms'
 	},
 	{
 		url: '/portfolio',
@@ -87,7 +87,7 @@ const Header = () => {
 						))}
 					</ul>
 					<div className='button-row'>
-						<Link href='https://investors.dalanmanagement.com/'>
+						<Link href='https://investors.dalanmanagement.com/login'>
 							<button onClick={() => closeMenu()} className='button-dark'>
 								Investor Portal
 							</button>
