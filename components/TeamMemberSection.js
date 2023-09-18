@@ -20,18 +20,20 @@ const TeamMemberSection = ({
 				<p className={styles.back} onClick={() => setShowModal(false)}>
 					Back
 				</p>
-				<div className={styles.photo}>
-					<Image
-						src={'https:' + photo}
-						fill
-						quality={100}
-						sizes='(max-width: 768px) 100vw, 768px'
-						style={{ objectFit: 'cover' }}
-						alt='Section Image'
-						priority={true}
-						as='img'
-					/>
-				</div>
+				{photo && (
+					<div className={styles.photo}>
+						<Image
+							src={'https:' + photo}
+							fill
+							quality={100}
+							sizes='(max-width: 768px) 100vw, 768px'
+							style={{ objectFit: 'cover' }}
+							alt='Section Image'
+							priority={true}
+							as='img'
+						/>
+					</div>
+				)}
 				<div className={styles.bio}>
 					<div>
 						<h3>{name}</h3>

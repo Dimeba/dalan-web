@@ -61,7 +61,10 @@ export default async function News() {
 							{portfolio.items
 								.filter(item => item.fields.equityOrDebt == 'Equity')
 								.map(property => (
-									<li key={property.sys.id}>{property.fields.address}</li>
+									<li key={property.sys.id}>
+										{property.fields.address}, {property.fields.city},{' '}
+										{property.fields.state} {property.fields.zip}
+									</li>
 								))}
 						</ul>
 					</div>
@@ -75,7 +78,10 @@ export default async function News() {
 							{portfolio.items
 								.filter(item => item.fields.equityOrDebt == 'Debt')
 								.map(property => (
-									<li key={property.sys.id}>{property.fields.address}</li>
+									<li key={property.sys.id}>
+										{property.fields.address}, {property.fields.city},{' '}
+										{property.fields.state} {property.fields.zip}
+									</li>
 								))}
 						</ul>
 					</div>

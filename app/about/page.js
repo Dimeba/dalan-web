@@ -29,7 +29,20 @@ export default async function News() {
 
 	const pageContent = about.items[0]
 
-	console.log(pageContent.fields.executiveTeam)
+	// sorting team
+
+	const sortedTeam = team.items.slice().sort((a, b) => {
+		const nameA = a.fields.name.toLowerCase()
+		const nameB = b.fields.name.toLowerCase()
+
+		if (nameA < nameB) {
+			return -1
+		}
+		if (nameA > nameB) {
+			return 1
+		}
+		return 0
+	})
 
 	return (
 		<main>
@@ -53,7 +66,7 @@ export default async function News() {
 				/> */}
 				<TeamSection
 					title='Team'
-					team={team.items.filter(item => item.fields.type == 'Team')}
+					team={sortedTeam.filter(item => item.fields.type == 'Team')}
 				/>
 				<Partners partners={pageContent.fields.partners} />
 				<History history={history.items} />

@@ -78,9 +78,14 @@
 
 	.summary {
 		text-align: left;
+		font-size: 1rem;
 	}
 
 	.content {
 		grid-column: span 12;
+
+		p {
+			font-size: 1rem;
+		}
 	}
 }

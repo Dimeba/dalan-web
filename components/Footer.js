@@ -74,7 +74,7 @@ const Footer = () => {
 			</footer>
 			<div className={styles.credits}>
 				<div>
-					<p>Dalan Re © Copyright {year}</p>
+					<p>DalanRe © Copyright {year}</p>
 
 					<ul>
 						<li>
