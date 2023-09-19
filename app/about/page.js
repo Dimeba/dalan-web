@@ -57,6 +57,10 @@ export default async function News() {
 					team={pageContent.fields.executiveTeam}
 				/>
 				<TeamSection
+					title='Dalan Credit Executives'
+					team={pageContent.fields.creditExecutives}
+				/>
+				<TeamSection
 					title='Senior Leadership Team'
 					team={pageContent.fields.seniorLeadership}
 				/>
