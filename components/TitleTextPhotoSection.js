@@ -51,7 +51,11 @@ const TitleTextPhotoSection = ({
 			)}
 
 			{customText1 && (
-				<div className={styles.content}>
+				<div
+					className={`${styles.content} ${
+						!photo && !customText2 && styles.fullWidthContent
+					}`}
+				>
 					<div className={styles.customText}>
 						{documentToReactComponents(customText1)}
 					</div>
