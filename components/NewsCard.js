@@ -8,18 +8,20 @@ import Link from 'next/link'
 const NewsCard = ({ title, publisher, date, link, photo }) => {
 	return (
 		<div className={styles.card}>
-			<div className={styles.photo}>
-				<Image
-					src={'https:' + photo.fields.file.url}
-					fill
-					quality={100}
-					sizes='(max-width: 768px) 100vw, 768px'
-					style={{ objectFit: 'cover' }}
-					alt='Section Image'
-					priority={true}
-					as='img'
-				/>
-			</div>
+			{photo && (
+				<div className={styles.photo}>
+					<Image
+						src={'https:' + photo.fields.file.url}
+						fill
+						quality={100}
+						sizes='(max-width: 768px) 100vw, 768px'
+						style={{ objectFit: 'cover' }}
+						alt='Section Image'
+						priority={true}
+						as='img'
+					/>
+				</div>
+			)}
 
 			<div className={styles.content}>
 				<p className={styles.source}>
