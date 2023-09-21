@@ -9,18 +9,20 @@ const Popup = ({ activeProperty }) => {
 		<div className={styles.popupContainer}>
 			<div className={styles.popupMargins}>
 				<div className={styles.popup}>
-					<div className={styles.photo}>
-						<Image
-							src={'https:' + activeProperty.fields.photo.fields.file.url}
-							fill
-							quality={100}
-							sizes='(max-width: 768px) 100vw, 768px'
-							style={{ objectFit: 'cover' }}
-							alt='Section Image'
-							priority={true}
-							as='img'
-						/>
-					</div>
+					{activeProperty.fields.photo && (
+						<div className={styles.photo}>
+							<Image
+								src={'https:' + activeProperty.fields.photo.fields.file.url}
+								fill
+								quality={100}
+								sizes='(max-width: 768px) 100vw, 768px'
+								style={{ objectFit: 'cover' }}
+								alt='Section Image'
+								priority={true}
+								as='img'
+							/>
+						</div>
+					)}
 					<div className={styles.content}>
 						<h4>{activeProperty.fields.name}</h4>
 						<p>Equity / Debt: {activeProperty.fields.equityOrDebt}</p>
