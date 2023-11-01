@@ -83,7 +83,7 @@ const Footer = () => {
 							</Link>
 						</li>
 						<li>
-							<Link href='https://www.instagram.com/dalanmanagement/'>
+							<Link href='https://www.instagram.com/dalanrealestate/'>
 								Instagram
 							</Link>
 						</li>
