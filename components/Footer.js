@@ -98,8 +98,8 @@ const Footer = () => {
 
 					<Image
 						src='/equal-housing-opportunity.png'
-						width={85}
-						height={50}
+						width={60}
+						height={30}
 						alt='Equal housing opportunity logo'
 					/>
 
