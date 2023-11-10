@@ -28,6 +28,32 @@ section {
 	grid-gap: base.$gap;
 }
 
+.fullWidthDiv {
+	grid-column: span 12;
+}
+
+// Terms of Use and Privacy Policy
+.termsAndPrivacy {
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	h4 {
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-weight: 600;
+	}
+
+	a {
+		font-weight: 700;
+		color: base.$color-primary;
+	}
+
+	p {
+		margin-bottom: 0.5rem;
+	}
+}
+
 // fonts
 
 h1,

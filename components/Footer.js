@@ -5,6 +5,7 @@ import styles from './Footer.module.scss'
 
 // components
 import Link from 'next/link'
+import Image from 'next/image'
 
 // menu
 import { menu } from './Header'
@@ -29,6 +30,14 @@ const Footer = () => {
 					<div className={styles.footerColumn}>
 						<ul>
 							<li>
+								<Link href='https://investors.dalanmanagement.com/'>
+									Investor Portal
+								</Link>
+							</li>
+							<li>
+								<Link href='https://www.dalanrentals.com/'>Rent Here</Link>
+							</li>
+							<li>
 								<Link href='/services/acquisitions'>Acquisitions</Link>
 							</li>
 							<li>
@@ -45,12 +54,23 @@ const Footer = () => {
 					<div className={styles.footerColumn}>
 						<ul>
 							<li>
-								<Link href='https://investors.dalanmanagement.com/'>
-									Investor Portal
+								<Link href='/terms'>Terms of Use</Link>
+							</li>
+							<li>
+								<Link href='/privacy'>Privacy Policy</Link>
+							</li>
+							<li>
+								<Link href='/NY-Fair-Housing-Notice.pdf' target='_blank'>
+									NY Fair Housing Notice
 								</Link>
 							</li>
 							<li>
-								<Link href='https://www.dalanrentals.com/'>Rent Here</Link>
+								<Link
+									href='/NY-Notice-Tenants-Reasonable-Accomodation.pdf'
+									target='_blank'
+								>
+									NY Notice Tenants Reasonable Accomodation
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -75,6 +95,13 @@ const Footer = () => {
 			<div className={styles.credits}>
 				<div>
 					<p>DalanRe © Copyright {year}</p>
+
+					<Image
+						src='/equal-housing-opportunity.png'
+						width={85}
+						height={50}
+						alt='Equal housing opportunity logo'
+					/>
 
 					<ul>
 						<li>
