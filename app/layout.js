@@ -16,7 +16,7 @@ export const metadata = {
 	description:
 		'Dalan RE is a fully vertically integrated investor with a proven track record of making a wide range of successful real estate investments in both equity and debt. Dalan has the ability to work with larger private equity firms but keeps the values of a family office.',
 	icons: {
-		icon: '/favicom.svg'
+		icon: '/favicon.svg'
 	}
 }
 
