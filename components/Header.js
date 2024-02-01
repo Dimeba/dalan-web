@@ -87,7 +87,7 @@ const Header = () => {
 						))}
 					</ul>
 					<div className='button-row'>
-						<Link href='https://investors.dalanre.com/'>
+						<Link href='https://investors.dalanre.com/' target='_blank'>
 							<button onClick={() => closeMenu()} className='button-dark'>
 								Investor Portal
 							</button>
