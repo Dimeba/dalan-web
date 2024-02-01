@@ -92,7 +92,10 @@ const Header = () => {
 								Investor Portal
 							</button>
 						</Link>
-						<Link href='https://www.dalanrentals.com/'>
+						<Link
+							href='https://listings.dalanrentals.com/searchlisting.aspx?ftst=&amp;LocationGeoId=0&amp;renewpg=1&amp;LatLng=%2837.09024,-95.712891%29&amp;'
+							target='_blank'
+						>
 							<button onClick={() => closeMenu()} className='button-blue'>
 								Rent Here
 							</button>
