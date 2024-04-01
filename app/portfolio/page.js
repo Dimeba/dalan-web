@@ -60,6 +60,7 @@ export default async function News() {
 						<ul>
 							{portfolio.items
 								.filter(item => item.fields.equityOrDebt == 'Equity')
+								.sort((a, b) => a.fields.zip - b.fields.zip)
 								.map(property => (
 									<li key={property.sys.id}>
 										{property.fields.address}, {property.fields.city},{' '}
