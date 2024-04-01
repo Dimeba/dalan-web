@@ -60,7 +60,35 @@ export default async function News() {
 						<ul>
 							{portfolio.items
 								.filter(item => item.fields.equityOrDebt == 'Equity')
-								.sort((a, b) => a.fields.zip - b.fields.zip)
+								.sort((a, b) => {
+									// Define the order of states
+									const stateOrder = ['NY', 'CA', 'TX']
+									const stateRankA = stateOrder.indexOf(a.fields.state)
+									const stateRankB = stateOrder.indexOf(b.fields.state)
+
+									if (stateRankA !== stateRankB) {
+										return stateRankA - stateRankB // Sort by state order first
+									}
+
+									// If states are the same, sort by zip code next
+									const zipCompare = a.fields.zip.localeCompare(b.fields.zip)
+									if (zipCompare !== 0) {
+										return zipCompare
+									}
+
+									// Extract the starting number from addresses for further sorting
+									const addressNumberA = parseInt(
+										a.fields.address.match(/^\d+/)[0],
+										10
+									)
+									const addressNumberB = parseInt(
+										b.fields.address.match(/^\d+/)[0],
+										10
+									)
+
+									// If zip codes are the same, sort by the numerical value at the start of the address
+									return addressNumberA - addressNumberB
+								})
 								.map(property => (
 									<li key={property.sys.id}>
 										{property.fields.address}, {property.fields.city},{' '}
