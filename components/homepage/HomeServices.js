@@ -16,7 +16,11 @@ const HomeServices = ({ services, noMargins }) => {
 					<div key={service.sys.id} className={styles.service}>
 						<h3>{service.fields.title}</h3>
 						<p className={styles.summary}>{service.fields.summary}</p>
-						<Link href={`/services/${service.fields.title.toLowerCase()}`}>
+						<Link
+							href={`/services/${service.fields.title
+								.toLowerCase()
+								.replace(/\s/g, '-')}`}
+						>
 							<button className='button-white'>Learn More</button>
 						</Link>
 					</div>
