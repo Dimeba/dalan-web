@@ -15,21 +15,29 @@ export async function generateStaticParams() {
 		content_type: 'service'
 	})
 
-	return services.items.map(service => ({
-		slug: service.fields.title.toLowerCase()
+	const slugs = services.items.map(service => ({
+		slug: service.fields.title.replace(/\s/g, '-').toLowerCase()
 	}))
+
+	// console.log('Generated slugs:', slugs)
+	return slugs
 }
 
 export default async function Service({ params }) {
 	const { slug } = params
+	const decodedSlug = decodeURIComponent(slug).replace(/\s/g, '-')
+
+	console.log('Decoded slug:', decodedSlug)
 
 	const services = await client.getEntries({
 		content_type: 'service'
 	})
 
 	const service = services.items.find(
-		item => item.fields.title.toLowerCase() == slug
+		item => item.fields.title.replace(/\s/g, '-').toLowerCase() == decodedSlug
 	)
+
+	console.log(service)
 
 	return (
 		<main>
