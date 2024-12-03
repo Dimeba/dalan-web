@@ -14,16 +14,17 @@ export default async function News() {
 	})
 
 	const news = await client.getEntries({
-		content_type: 'news',
-		order: 'sys.createdAt'
+		content_type: 'newsPage'
 	})
+
+	const content = news.items[0].fields
 
 	return (
 		<main>
 			<section>
 				<div className='sectionContainer'>
-					<h2 className={styles.title}>In The News</h2>
-					{news.items.map(article => (
+					<h2 className={styles.title}>{content.title}</h2>
+					{content.news.map(article => (
 						<NewsCard
 							key={article.sys.id}
 							title={article.fields.title}
