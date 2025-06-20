@@ -1,9 +1,14 @@
+'use client'
+
 // styles
 import styles from './TeamMemberSection.module.scss'
 
 // components
 import Image from 'next/image'
 import Link from 'next/link'
+
+// hooks
+import { useEffect } from 'react'
 
 const TeamMemberSection = ({
 	name,
@@ -14,6 +19,14 @@ const TeamMemberSection = ({
 	vcard,
 	setShowModal
 }) => {
+	useEffect(() => {
+		const original = document.body.style.overflow
+		document.body.style.overflow = 'hidden'
+		return () => {
+			document.body.style.overflow = original
+		}
+	}, [])
+
 	return (
 		<div className={styles.modal}>
 			<div className='sectionContainer'>
