@@ -27,7 +27,16 @@ export default async function News() {
 		content_type: 'aboutPage'
 	})
 
+	const careers = await client.getEntries({
+		content_type: 'careersPage'
+	})
+
+	const openPositions = await client.getEntries({
+		content_type: 'openPositions'
+	})
+
 	const pageContent = about.items[0]
+	const careersPageContent = careers.items[0]
 
 	// sorting team
 
@@ -47,13 +56,34 @@ export default async function News() {
 	return (
 		<main>
 			<section>
-				<TitleTextPhotoSection
-					title={pageContent.fields.title}
-					summary={pageContent.fields.description}
+				<TeamSection
+					title='Executive Team'
+					team={pageContent.fields.executiveTeam}
+				/>
+				<TeamSection
+					title='Dalan Credit Executives'
+					team={pageContent.fields.creditExecutives}
+				/>
+				<TeamSection
+					title='Senior Leadership Team'
+					team={pageContent.fields.seniorLeadership}
+				/>
+				{/* <TeamSection
+					title='Advisors'
+					team={team.items.filter(item => item.fields.type == 'Advisors')}
+				/> */}
+				<TeamSection
+					title='Team'
+					team={sortedTeam.filter(item => item.fields.type == 'Team')}
 				/>
 
-				<Partners partners={pageContent.fields.partners} />
-				<History history={history.items} />
+				<TitleTextPhotoSection
+					title={careersPageContent.fields.title}
+					summary={careersPageContent.fields.description}
+					photo={careersPageContent.fields.photo.fields.file.url}
+					careers={true}
+					openPositions={openPositions.items}
+				/>
 			</section>
 		</main>
 	)

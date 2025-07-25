@@ -16,6 +16,10 @@ export const menu = [
 		text: 'About Us'
 	},
 	{
+		url: '/team',
+		text: 'Our Team'
+	},
+	{
 		url: '/platforms',
 		text: 'Our Platforms'
 	},
@@ -27,10 +31,10 @@ export const menu = [
 		url: '/news',
 		text: 'News'
 	},
-	{
-		url: '/careers',
-		text: 'Careers'
-	},
+	// {
+	// 	url: '/careers',
+	// 	text: 'Careers'
+	// },
 	{
 		url: '/contact',
 		text: 'Contact Us'

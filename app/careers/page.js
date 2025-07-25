@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+
 // components
 import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 
@@ -19,6 +21,8 @@ export default async function News() {
 	})
 
 	const pageContent = careers.items[0]
+
+	redirect('/team')
 
 	return (
 		<main>
