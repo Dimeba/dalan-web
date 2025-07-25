@@ -9,6 +9,12 @@ import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const RepresentativeTransactions = ({ transactions }) => {
+	const maxTransactions = 4
+	const placeholders = Array.from(
+		{ length: maxTransactions - transactions.length },
+		(_, i) => i
+	)
+
 	return (
 		<section>
 			<div className='sectionContainer'>
@@ -45,6 +51,16 @@ const RepresentativeTransactions = ({ transactions }) => {
 							</div>
 						</div>
 					))}
+
+				{placeholders.map(i => (
+					<div
+						key={i}
+						className={styles.propertyCard}
+						style={{ backgroundColor: '#031d44' }}
+					>
+						<div className={styles.propertyText}></div>
+					</div>
+				))}
 			</div>
 
 			<div className='sectionContainer'>
