@@ -5,8 +5,20 @@ import styles from './HomePortfolio.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const HomePortfolio = ({ portfolio, homepage }) => {
-	const recentClosings = portfolio.filter(property => property.fields.featured)
+// contentful
+import { createClient } from 'contentful'
+
+const HomePortfolio = async ({ homepage }) => {
+	const client = createClient({
+		space: process.env.space,
+		accessToken: process.env.accessToken
+	})
+
+	const portfolioPage = await client.getEntries({
+		content_type: 'portfolioPage'
+	})
+
+	const recentClosings = portfolioPage.items[0].fields.featuredDeals
 
 	return (
 		<section>

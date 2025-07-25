@@ -33,26 +33,26 @@ export default async function News() {
 				<Map portfolio={portfolio.items} />
 				<div className={styles.highlightsContainer}>
 					<div className={styles.highlights}>
-						<div>
+						{/* <div>
 							<h4>3 Million SF</h4>
 							<p>Residential and Commercial real estate across the US</p>
+						</div> */}
+						<div>
+							<h4>$4.5+ Billion</h4>
+							<p>Active & Realized Equity and Credit Investments</p>
 						</div>
 						<div>
-							<h4>$2.5+ Billion</h4>
-							<p>Assets under Management</p>
+							<h4>4 Focused Markets</h4>
+							<p>with Competitive Advantage</p>
 						</div>
 						<div>
-							<h4>7 Focused Markets</h4>
-							<p>with competitive advantages</p>
-						</div>
-						<div>
-							<h4>72% Multifamily | 16% Retail | 12% Office</h4>
-							<p>Portfolio Allocation (by Asset Class)</p>
+							<h4>18.3% Gross IRR | 1.4x Multiple</h4>
+							<p>on Realized Deals</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<HomePortfolio portfolio={portfolio.items} homepage={false} />
+			<HomePortfolio homepage={false} />
 			<section>
 				<div className='sectionContainer'>
 					<div className={styles.portfolioList}>
