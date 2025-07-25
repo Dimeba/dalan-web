@@ -96,12 +96,25 @@ const Footer = () => {
 				<div>
 					<p>DalanRe © Copyright {year}</p>
 
-					<Image
-						src='/equal-housing-opportunity.png'
-						width={60}
-						height={30}
-						alt='Equal housing opportunity logo'
-					/>
+					<div
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							flexWrap: 'wrap',
+							width: 'fit-content'
+						}}
+					>
+						<Image
+							src='/equal-housing-opportunity.png'
+							width={60}
+							height={30}
+							alt='Equal housing opportunity logo'
+						/>
+
+						<Link target='_blank' href='https://www.nj.gov/dca/home/act.shtml'>
+							<p>NJ Fair Housing</p>
+						</Link>
+					</div>
 
 					<ul>
 						<li>
