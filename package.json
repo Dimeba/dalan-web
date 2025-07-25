@@ -13,7 +13,7 @@
 		"@react-google-maps/api": "^2.19.2",
 		"contentful": "^10.4.0",
 		"leaflet": "^1.9.4",
-		"next": "13.4.12",
+		"next": "^15.4.4",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-leaflet": "^4.2.1",
