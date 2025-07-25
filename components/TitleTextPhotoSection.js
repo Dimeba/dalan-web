@@ -11,6 +11,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const TitleTextPhotoSection = ({
 	title,
+	smallTitle,
 	summary,
 	photo,
 	description,
@@ -24,6 +25,8 @@ const TitleTextPhotoSection = ({
 	return (
 		<div className='sectionContainer'>
 			{title && <h2 className={styles.title}>{title}</h2>}
+
+			{smallTitle && <h3 className={styles.title}>{smallTitle}</h3>}
 
 			{summary && (
 				<div className={styles.summary}>

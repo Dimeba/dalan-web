@@ -1,29 +1,47 @@
 // styles
 import styles from './HomeParamaters.module.scss'
 
-const Paramaters = ({ acquisitionsParameters, creditParameters }) => {
+const Paramaters = ({
+	customTitle = 'Target Deal Parameters',
+	hideTitle = false,
+	acquisitionsParameters,
+	acquisitionsTitle = 'Acquisitions',
+	creditParameters,
+	creditTitle = 'Credit',
+	richText = false
+}) => {
 	return (
 		<section className={styles.paramaters}>
 			<div className='sectionContainer'>
-				<div className={styles.description}>
-					<h2>Target Deal Parameters</h2>
-				</div>
+				{!hideTitle && (
+					<div className={styles.description}>
+						<h2>{customTitle}</h2>
+					</div>
+				)}
 
-				<div className={styles.paramaterColumn}>
-					<h3>Acquisitions</h3>
+				<div
+					className={hideTitle ? styles.richTextColumn : styles.paramaterColumn}
+				>
+					<h3>{acquisitionsTitle}</h3>
 					<ul>
-						{acquisitionsParameters.map(item => (
-							<li key={item}>{item}</li>
-						))}
+						{!richText ? (
+							acquisitionsParameters.map(item => <li key={item}>{item}</li>)
+						) : (
+							<div className={styles.richText}>{acquisitionsParameters}</div>
+						)}
 					</ul>
 				</div>
 
-				<div className={styles.paramaterColumn}>
-					<h3>Credit</h3>
+				<div
+					className={hideTitle ? styles.richTextColumn : styles.paramaterColumn}
+				>
+					<h3>{creditTitle}</h3>
 					<ul>
-						{creditParameters.map(item => (
-							<li key={item}>{item}</li>
-						))}
+						{!richText ? (
+							creditParameters.map(item => <li key={item}>{item}</li>)
+						) : (
+							<div className={styles.richText}>{creditParameters}</div>
+						)}
 					</ul>
 				</div>
 			</div>
