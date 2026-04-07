@@ -16,16 +16,16 @@ export const metadata = {
 	description:
 		'Dalan RE is a fully vertically integrated investor with a proven track record of making a wide range of successful real estate investments in both equity and debt. Dalan has the ability to work with larger private equity firms but keeps the values of a family office.',
 	icons: {
-		icon: '/favicon.svg'
+		icon: [
+			{ url: '/favicon.ico' },
+			{ url: '/favicon.svg', type: 'image/svg+xml' }
+		]
 	}
 }
 
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<head>
-				<link rel='icon' href='/favicon.svg' type='image/svg+xml' />
-			</head>
 			<body className={roboto.className}>
 				<Header />
 				{children}

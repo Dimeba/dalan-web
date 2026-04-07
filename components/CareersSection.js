@@ -8,14 +8,12 @@ const CareersSection = ({ openPositions }) => {
 	return (
 		<div className={styles.careers}>
 			<h3>Open Positions</h3>
-			{openPositions.map(position => (
-				<div className={styles.position} key={position.sys.id}>
-					<h4>{position.fields.title}</h4>
-					<Link href={'https:' + position.fields.document.fields.file.url}>
-						<p>Download PDF</p>
-					</Link>
-				</div>
-			))}
+			<div className={styles.position}>
+				{/* <h4>{position.fields.title}</h4> */}
+				<Link href={'https://www.linkedin.com/company/dalan-re/'}>
+					<p>Visit Our LinkedIn</p>
+				</Link>
+			</div>
 		</div>
 	)
 }

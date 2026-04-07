@@ -42,6 +42,15 @@
 	}
 }
 
+.richTextSection {
+	margin-top: calc(base.$gap * 0.9);
+}
+
+.richTextSectionTitle {
+	font-size: inherit !important;
+	margin-bottom: calc(base.$gap / 2) !important;
+}
+
 @media screen and (max-width: 1024px) {
 	.description {
 		grid-column: span 12;

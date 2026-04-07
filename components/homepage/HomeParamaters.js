@@ -6,6 +6,8 @@ const Paramaters = ({
 	hideTitle = false,
 	acquisitionsParameters,
 	acquisitionsTitle = 'Acquisitions',
+	acquisitionsExtraTitle,
+	acquisitionsExtraParagraphs = [],
 	creditParameters,
 	creditTitle = 'Credit',
 	richText = false
@@ -27,7 +29,19 @@ const Paramaters = ({
 						{!richText ? (
 							acquisitionsParameters.map(item => <li key={item}>{item}</li>)
 						) : (
-							<div className={styles.richText}>{acquisitionsParameters}</div>
+							<div className={styles.richText}>
+								{acquisitionsParameters}
+								{acquisitionsExtraTitle && (
+									<>
+										<h3 style={{ fontSize: '32px', margin: '32px 0 24px 0' }}>
+											{acquisitionsExtraTitle}
+										</h3>
+										{acquisitionsExtraParagraphs.map(paragraph => (
+											<p key={paragraph}>{paragraph}</p>
+										))}
+									</>
+								)}
+							</div>
 						)}
 					</ul>
 				</div>

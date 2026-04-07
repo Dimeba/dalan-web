@@ -52,16 +52,13 @@ export default async function News() {
 	return (
 		<main>
 			<section>
+				<TeamSection title='Founders' team={pageContent.fields.executiveTeam} />
 				<TeamSection
-					title='Executive Team'
-					team={pageContent.fields.executiveTeam}
-				/>
-				<TeamSection
-					title='Dalan Credit Executives'
+					title='Executive Leadership'
 					team={pageContent.fields.creditExecutives}
 				/>
 				<TeamSection
-					title='Senior Leadership Team'
+					title='Senior Leadership'
 					team={pageContent.fields.seniorLeadership}
 				/>
 				{/* <TeamSection
