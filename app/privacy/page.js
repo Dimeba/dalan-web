@@ -1,14 +1,10 @@
 // components
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 export default async function Privacy() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const privacy = await client.getEntries({
 		content_type: 'privacy'

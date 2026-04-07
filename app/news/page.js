@@ -4,14 +4,10 @@ import styles from './News.module.scss'
 // components
 import NewsCard from '@/components/NewsCard'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 export default async function News() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const news = await client.getEntries({
 		content_type: 'newsPage'

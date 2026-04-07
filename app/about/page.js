@@ -4,15 +4,11 @@ import Partners from '@/components/about/Partners'
 import History from '@/components/History'
 import Paramaters from '@/components/homepage/HomeParamaters'
 
-// contentful
-import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { getContentfulClient } from '@/lib/contentful'
 
 export default async function News() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const history = await client.getEntries({
 		content_type: 'history',
@@ -24,30 +20,35 @@ export default async function News() {
 	})
 
 	const pageContent = about.items[0]
+	const pageFields = pageContent?.fields ?? {}
 
 	return (
 		<main>
 			<section>
 				<TitleTextPhotoSection
-					title={pageContent.fields.title}
-					summary={pageContent.fields.description}
+					title={pageFields.title}
+					summary={pageFields.description}
 				/>
 
 				<Paramaters
 					hideTitle={true}
 					acquisitionsTitle='Our Mission'
-					acquisitionsParameters={documentToReactComponents(
-						pageContent.fields.mission
-					)}
-					creditParameters={documentToReactComponents(
-						pageContent.fields.values
-					)}
+					acquisitionsParameters={
+						pageFields.mission
+							? documentToReactComponents(pageFields.mission)
+							: null
+					}
+					creditParameters={
+						pageFields.values
+							? documentToReactComponents(pageFields.values)
+							: null
+					}
 					creditTitle='Core Values'
 					richText={true}
 				/>
 
-				<Partners partners={pageContent.fields.partners} />
-				<History history={history.items} />
+				<Partners partners={pageFields.partners ?? []} />
+				<History history={history.items ?? []} />
 			</section>
 		</main>
 	)

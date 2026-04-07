@@ -1,14 +1,10 @@
 // components
 import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 export default async function News() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const contact = await client.getEntries({
 		content_type: 'contactPage'

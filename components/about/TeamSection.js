@@ -8,7 +8,7 @@ const TeamSection = ({ title, team }) => {
 	return (
 		<div className='sectionContainer' style={{ marginBottom: '5rem' }}>
 			<h3 className={styles.title}>{title}</h3>
-			{team.map(item => (
+			{(team ?? []).map(item => (
 				<TeamCard
 					key={item.sys.id}
 					name={item.fields.name}

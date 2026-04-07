@@ -2,13 +2,9 @@
 import TitleTextPhotoSection from '@/components/TitleTextPhotoSection'
 import RepresentativeTransactions from '@/components/RepresentativeTransactions'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
-const client = createClient({
-	space: process.env.space,
-	accessToken: process.env.accessToken
-})
+const client = getContentfulClient()
 
 export async function generateStaticParams() {
 	const services = await client.getEntries({
@@ -19,15 +15,12 @@ export async function generateStaticParams() {
 		slug: service.fields.title.replace(/\s/g, '-').toLowerCase()
 	}))
 
-	// console.log('Generated slugs:', slugs)
 	return slugs
 }
 
 export default async function Service({ params }) {
 	const { slug } = params
 	const decodedSlug = decodeURIComponent(slug).replace(/\s/g, '-')
-
-	console.log('Decoded slug:', decodedSlug)
 
 	const services = await client.getEntries({
 		content_type: 'service'
@@ -36,8 +29,6 @@ export default async function Service({ params }) {
 	const service = services.items.find(
 		item => item.fields.title.replace(/\s/g, '-').toLowerCase() == decodedSlug
 	)
-
-	console.log(service)
 
 	return (
 		<main>

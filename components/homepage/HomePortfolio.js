@@ -5,14 +5,10 @@ import styles from './HomePortfolio.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 const HomePortfolio = async ({ homepage }) => {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const portfolioPage = await client.getEntries({
 		content_type: 'portfolioPage'

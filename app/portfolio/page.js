@@ -1,18 +1,14 @@
 // styles
 import styles from './Portfolio.module.scss'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 // components
 import Map from '@/components/Map'
 import HomePortfolio from '@/components/homepage/HomePortfolio'
 
 export default async function News() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const portfolio = await client.getEntries({
 		content_type: 'portfolio'

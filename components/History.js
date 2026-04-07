@@ -7,7 +7,7 @@ const History = ({ history }) => {
 			<h3 className={styles.pageTitle}>History</h3>
 			<div className={styles.historyContainer}>
 				<div className={styles.history}>
-					{history.map(event => (
+					{(history ?? []).map(event => (
 						<div key={event.sys.id} className={styles.event}>
 							<div className={styles.circle}></div>
 							<div className={styles.content}>

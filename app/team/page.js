@@ -4,14 +4,10 @@ import TeamSection from '@/components/about/TeamSection'
 import Partners from '@/components/about/Partners'
 import History from '@/components/History'
 
-// contentful
-import { createClient } from 'contentful'
+import { getContentfulClient } from '@/lib/contentful'
 
 export default async function News() {
-	const client = createClient({
-		space: process.env.space,
-		accessToken: process.env.accessToken
-	})
+	const client = getContentfulClient()
 
 	const team = await client.getEntries({
 		content_type: 'team',
