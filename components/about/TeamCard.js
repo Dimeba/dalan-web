@@ -10,13 +10,13 @@ import { useState } from 'react'
 import Image from 'next/image'
 import TeamMemberSection from '../TeamMemberSection'
 
-const TeamCard = ({ name, title, photo, bio, linkedin, vcard }) => {
+const TeamCard = ({ name, title, photo, bio, linkedin, vcard, hidePhoto }) => {
 	const [showModal, setShowModal] = useState(false)
 
 	return (
 		<>
 			<div className={styles.teamCard}>
-				{photo && (
+				{!hidePhoto && photo && (
 					<div className={styles.photo}>
 						<Image
 							src={'https:' + photo}
@@ -32,7 +32,7 @@ const TeamCard = ({ name, title, photo, bio, linkedin, vcard }) => {
 				)}
 				<h4>{name}</h4>
 				<p>{title}</p>
-				{bio && (
+				{!hidePhoto && bio && (
 					<p onClick={() => setShowModal(true)} className={styles.button}>
 						Read Bio
 					</p>

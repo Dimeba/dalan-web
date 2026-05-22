@@ -4,7 +4,7 @@ import styles from './TeamSection.module.scss'
 // components
 import TeamCard from './TeamCard'
 
-const TeamSection = ({ title, team }) => {
+const TeamSection = ({ title, team, hidePhoto }) => {
 	return (
 		<div className='sectionContainer' style={{ marginBottom: '5rem' }}>
 			<h3 className={styles.title}>{title}</h3>
@@ -17,6 +17,7 @@ const TeamSection = ({ title, team }) => {
 					bio={item.fields.bio}
 					linkedin={item.fields.linkedin}
 					vcard={item.fields.vcard && item.fields.vcard.fields.file.url}
+					hidePhoto={hidePhoto}
 				/>
 			))}
 		</div>
