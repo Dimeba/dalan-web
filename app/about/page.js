@@ -32,18 +32,12 @@ export default async function News() {
 
 				<Paramaters
 					hideTitle={true}
-					acquisitionsTitle='Our Mission'
+					acquisitionsTitle='Our Mission and Approach'
 					acquisitionsParameters={
 						pageFields.mission
 							? documentToReactComponents(pageFields.mission)
 							: null
 					}
-					acquisitionsExtraTitle='Our Approach'
-					acquisitionsExtraParagraphs={[
-						'At Dalan Real Estate, our approach is rooted in disciplined execution, data-driven decision-making, and a fully integrated operating model. We combine institutional rigor with hands-on market expertise to identify opportunities, manage risk, and unlock value across every stage of the investment lifecycle.',
-						'We invest with conviction - grounded in deep market knowledge, thoughtful underwriting, and a long-term perspective - while remaining agile in dynamic environments, leaning into opportunities when fundamentals are strong and dislocation is temporary. Our vertically integrated platform enables seamless alignment across acquisitions, credit, management, and leasing, ensuring that strategy and execution remain tightly connected.',
-						'Above all, our approach is people-driven. We are committed to delivering exceptional service to our residents, transparent communication with our partners, and fostering a collaborative culture within our teams - because strong relationships are foundational to long-term success.'
-					]}
 					creditParameters={
 						pageFields.values
 							? documentToReactComponents(pageFields.values)
