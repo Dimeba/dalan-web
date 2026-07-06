@@ -4,7 +4,7 @@ import { Roboto } from 'next/font/google'
 
 const roboto = Roboto({
 	subsets: ['latin'],
-	weight: '400'
+	weight: ['300', '400']
 })
 
 // components

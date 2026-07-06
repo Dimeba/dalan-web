@@ -4,24 +4,16 @@ import styles from './HomeHero.module.scss'
 // components
 import Link from 'next/link'
 
-const Hero = ({ title, services }) => {
+const Hero = () => {
 	return (
 		<section className={styles.hero}>
-			<div>
-				<h1>{title}</h1>
-				<div className={styles.listContainer}>
-					<ul>
-						{services.map(service => (
-							<li
-								style={{ color: '#0567fe', whiteSpace: 'nowrap' }}
-								key={service.sys.id}
-							>
-								{service.fields.title}
-							</li>
-						))}
-						<li>Real&nbsp;Estate</li>
-					</ul>
-				</div>
+			<div className={styles.titleBlock}>
+				<h1>Dalan Real Estate</h1>
+				<h2>
+					A Vertically Integrated Real Estate Investment
+					<br />
+					and Operating Firm
+				</h2>
 			</div>
 
 			<div className='button-row'>

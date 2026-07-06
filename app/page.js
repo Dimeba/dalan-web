@@ -29,10 +29,7 @@ export default async function Home() {
 
 	return (
 		<main>
-			<HomeHero
-				title={homepageContent.fields.title}
-				services={services.items}
-			/>
+			<HomeHero />
 			<HomeAbout
 				aboutText={homepageContent.fields.aboutText}
 				aboutPhoto={homepageContent.fields.aboutPhoto}
