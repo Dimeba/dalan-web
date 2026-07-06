@@ -1,42 +1,72 @@
 @use '../../app/base';
 
+// Header: vertical padding (gap/4 * 2) + tallest nav element (button height)
+$header-padding-y: base.$gap * 0.25;
+$header-button-height: calc(0.625rem * 2 + 1.25rem);
+$header-height: calc(#{$header-padding-y} * 2 + #{$header-button-height});
+$hero-title-offset: calc(#{$header-height} + #{base.$gap * 0.5});
+
 .services {
 	min-height: 100vh;
 	background-image: url('/services-background.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: base.$color-main;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
+	flex-direction: column;
 
 	* {
 		color: white;
 	}
 }
 
+.withHeroTitle {
+	padding-top: $hero-title-offset;
+}
+
+.title {
+	text-align: center;
+	padding: calc(base.$gap / 2) base.$gap;
+	font-size: 3rem;
+	line-height: 120%;
+}
+
+.columns {
+	flex: 1;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	min-height: 0;
+}
+
 .service {
+	border-top: 1px solid white;
 	border-right: 1px solid white;
 	display: flex;
 	flex-direction: column;
 	gap: calc(base.$gap / 2);
-
 	padding-left: base.$gap;
 	padding-right: base.$gap;
 	padding-bottom: base.$gap;
 	padding-top: 40%;
 }
-
 .service:hover {
 	background-color: rgba($color: base.$color-primary, $alpha: 0.2);
 }
 
+.learnMore {
+	margin-top: auto;
+}
+
 @media screen and (max-width: 1024px) {
+	.columns {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 	.service {
 		border-right: 1px solid white;
 		border-bottom: 1px solid white;
-		grid-column: span 2;
 		padding-top: base.$gap;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
 	.summary {
@@ -45,10 +75,18 @@
 }
 
 @media screen and (max-width: 768px) {
+	.title {
+		font-size: 2rem;
+		padding: calc(base.$gap / 2);
+	}
+
+	.columns {
+		grid-template-columns: 1fr;
+	}
+
 	.service {
 		border-right: none;
 		border-bottom: 1px solid white;
-		grid-column: span 4;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 }

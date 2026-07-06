@@ -1,10 +1,5 @@
 // components
-import HomeHero from '@/components/homepage/HomeHero'
-import HomeAbout from '@/components/homepage/HomeAbout'
 import HomeServices from '@/components/homepage/HomeServices'
-import HomeParamaters from '@/components/homepage/HomeParamaters'
-import HomePortfolio from '@/components/homepage/HomePortfolio'
-import HomeNews from '@/components/homepage/HomeNews'
 
 import { getContentfulClient } from '@/lib/contentful'
 
@@ -18,7 +13,11 @@ export default async function Home() {
 
 	return (
 		<main>
-			<HomeServices services={services.items} noMargins={true} />
+			<HomeServices
+				services={services.items}
+				noMargins={true}
+				title='Four integrated businesses. One unified vision.'
+			/>
 		</main>
 	)
 }

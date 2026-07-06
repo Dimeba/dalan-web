@@ -35,7 +35,10 @@ export default async function Home() {
 				aboutText={homepageContent.fields.aboutText}
 				aboutPhoto={homepageContent.fields.aboutPhoto}
 			/>
-			<HomeServices services={services.items} />
+			<HomeServices
+				services={services.items}
+				title='Four integrated businesses. One unified vision.'
+			/>
 			<HomeParamaters
 				acquisitionsParameters={homepageContent.fields.acquisitionsParameters}
 				creditParameters={homepageContent.fields.creditParameters}
