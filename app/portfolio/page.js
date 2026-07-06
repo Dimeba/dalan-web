@@ -35,14 +35,14 @@ export default async function News() {
 						</div> */}
 						<div>
 							<h4>$4.5+ Billion</h4>
-							<p>Active & Realized Equity and Credit Investments</p>
+							<p>Active &amp; Realized Equity and Credit Investments</p>
 						</div>
 						<div>
 							<h4>4 Focused Markets</h4>
 							<p>with Competitive Advantage</p>
 						</div>
 						<div>
-							<h4>18.3% Gross IRR | 1.4x Multiple</h4>
+							<h4>19.0% Gross IRR | 1.4x Multiple</h4>
 							<p>on Realized Deals</p>
 						</div>
 					</div>

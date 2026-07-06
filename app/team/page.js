@@ -49,6 +49,22 @@ export default async function News() {
 		return 0
 	})
 
+	const sortedAdvisors = team.items
+		.filter(item => item.fields.type == 'Advisors')
+		.slice()
+		.sort((a, b) => {
+			const nameA = a.fields.name.toLowerCase()
+			const nameB = b.fields.name.toLowerCase()
+
+			if (nameA < nameB) {
+				return -1
+			}
+			if (nameA > nameB) {
+				return 1
+			}
+			return 0
+		})
+
 	return (
 		<main>
 			<section>
@@ -62,14 +78,11 @@ export default async function News() {
 					hidePhoto
 					team={pageContent.fields.seniorLeadership}
 				/>
-				{/* <TeamSection
-					title='Advisors'
-					team={team.items.filter(item => item.fields.type == 'Advisors')}
-				/> */}
 				<TeamSection
 					title='Team'
 					team={sortedTeam.filter(item => item.fields.type == 'Team')}
 				/>
+				<TeamSection title='Advisors' hidePhoto team={sortedAdvisors} />
 
 				<TitleTextPhotoSection
 					title={careersPageContent.fields.title}

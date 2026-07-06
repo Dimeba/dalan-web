@@ -69,7 +69,15 @@ const Footer = () => {
 									href='/NY-Notice-Tenants-Reasonable-Accomodation.pdf'
 									target='_blank'
 								>
-									NY Notice Tenants Reasonable Accomodation
+									NY Notice Tenants Reasonable Accommodation
+								</Link>
+							</li>
+							<li>
+								<Link
+									href='https://www.nj.gov/dca/home/act.shtml'
+									target='_blank'
+								>
+									NJ Fair Housing Notice
 								</Link>
 							</li>
 						</ul>
@@ -101,7 +109,8 @@ const Footer = () => {
 							display: 'flex',
 							alignItems: 'center',
 							flexWrap: 'wrap',
-							width: 'fit-content'
+							width: 'fit-content',
+							gap: '1rem'
 						}}
 					>
 						<Image
@@ -110,6 +119,10 @@ const Footer = () => {
 							height={30}
 							alt='Equal housing opportunity logo'
 						/>
+
+						<Link target='_blank' href='/NY-Fair-Housing-Notice.pdf'>
+							<p>NY Fair Housing</p>
+						</Link>
 
 						<Link target='_blank' href='https://www.nj.gov/dca/home/act.shtml'>
 							<p>NJ Fair Housing</p>
