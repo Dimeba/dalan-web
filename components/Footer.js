@@ -131,12 +131,18 @@ const Footer = () => {
 
 					<ul>
 						<li>
-							<Link href='https://www.linkedin.com/company/dalan-management/'>
+							<Link
+								href='https://www.linkedin.com/company/dalan-management/'
+								target='_blank'
+							>
 								LinkedIn
 							</Link>
 						</li>
 						<li>
-							<Link href='https://www.instagram.com/dalanrealestate/'>
+							<Link
+								href='https://www.instagram.com/dalanrealestate/'
+								target='_blank'
+							>
 								Instagram
 							</Link>
 						</li>

@@ -29,7 +29,7 @@ const Paramaters = ({
 						{!richText ? (
 							acquisitionsParameters.map(item => <li key={item}>{item}</li>)
 						) : (
-							<div className={styles.richText}>
+							<div className={`${styles.richText} ${styles.missionRichText}`}>
 								{acquisitionsParameters}
 								{acquisitionsExtraTitle && (
 									<>

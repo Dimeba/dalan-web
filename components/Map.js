@@ -48,7 +48,7 @@ const Map = ({ portfolio }) => {
 	return (
 		<>
 			<GoogleMap
-				zoom={5}
+				zoom={5.5}
 				center={center}
 				mapContainerClassName={styles.map}
 				options={options}

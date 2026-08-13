@@ -7,6 +7,30 @@ import Paramaters from '@/components/homepage/HomeParamaters'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getContentfulClient } from '@/lib/contentful'
 
+function getNodeText(node) {
+	if (!node) return ''
+	if (typeof node.value === 'string') return node.value
+	if (!Array.isArray(node.content)) return ''
+	return node.content.map(getNodeText).join('')
+}
+
+function renderMissionHeading(tag, node, children) {
+	const Tag = tag
+	const isApproach = getNodeText(node).includes('Our Approach')
+
+	return (
+		<Tag data-heading={isApproach ? 'our-approach' : undefined}>{children}</Tag>
+	)
+}
+
+const missionRichTextOptions = {
+	renderNode: {
+		'heading-2': (node, children) => renderMissionHeading('h2', node, children),
+		'heading-3': (node, children) => renderMissionHeading('h3', node, children),
+		'heading-4': (node, children) => renderMissionHeading('h4', node, children)
+	}
+}
+
 export default async function News() {
 	const client = getContentfulClient()
 
@@ -35,7 +59,10 @@ export default async function News() {
 					acquisitionsTitle='Our Mission and Approach'
 					acquisitionsParameters={
 						pageFields.mission
-							? documentToReactComponents(pageFields.mission)
+							? documentToReactComponents(
+									pageFields.mission,
+									missionRichTextOptions
+								)
 							: null
 					}
 					creditParameters={

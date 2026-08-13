@@ -10,7 +10,10 @@ const CareersSection = ({ openPositions }) => {
 			<h3>Open Positions</h3>
 			<div className={styles.position}>
 				{/* <h4>{position.fields.title}</h4> */}
-				<Link href={'https://www.linkedin.com/company/dalan-re/'}>
+				<Link
+					href={'https://www.linkedin.com/company/dalan-re/'}
+					target='_blank'
+				>
 					<p>Visit Our LinkedIn</p>
 				</Link>
 			</div>

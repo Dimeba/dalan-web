@@ -42,6 +42,14 @@
 	}
 }
 
+.missionRichText {
+	h2[data-heading='our-approach'],
+	h3[data-heading='our-approach'],
+	h4[data-heading='our-approach'] {
+		margin-top: 40px;
+	}
+}
+
 .richTextSection {
 	margin-top: calc(base.$gap * 0.9);
 }
