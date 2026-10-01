@@ -114,6 +114,13 @@ const Footer = () => {
 						}}
 					>
 						<Image
+							src='/paw-print.png'
+							width={30}
+							height={30}
+							alt='Pet friendly'
+						/>
+
+						<Image
 							src='/equal-housing-opportunity.png'
 							width={60}
 							height={30}
