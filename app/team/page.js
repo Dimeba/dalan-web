@@ -82,7 +82,9 @@ export default async function News() {
 					title='Team'
 					team={sortedTeam.filter(item => item.fields.type == 'Team')}
 				/>
-				<TeamSection title='Advisors' hidePhoto team={sortedAdvisors} />
+				{sortedAdvisors.length > 0 && (
+					<TeamSection title='Advisors' hidePhoto team={sortedAdvisors} />
+				)}
 
 				<TitleTextPhotoSection
 					title={careersPageContent.fields.title}
